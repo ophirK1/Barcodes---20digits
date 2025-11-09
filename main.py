@@ -186,7 +186,7 @@ class Client:
     def play_sound(self, sound_name):
         mp3_file = SOUND_PATH.format(sound_name)
         if os.path.exists(mp3_file):
-            subprocess.Popen(["mpg123", "-a", "hw:2,0", mp3_file])
+            subprocess.Popen(["mpg123", "-o", "alsa", mp3_file])
 
     def ping_server(self, ip):
         try:
